@@ -8,6 +8,7 @@ var main = function(){
 	var scroll_appProcent = 0
 	var scroll_figureProcent = 0
 
+	var appScrolls = 3;
 	var appPadding = 75;
 
 	var figure_size = 75;
@@ -21,7 +22,9 @@ var main = function(){
 		window_width = $(window).width();
 		window_height = $(window).height();
 		windowHeight_border = window_height - (appPadding * 2);
-		app_height = $("[app]").height();
+		app_height = window_height * appScrolls;
+
+		$("[app]").css("height", app_height + "px");
 	} // function. changeWindowSize
 
 	function changeScroll(){
